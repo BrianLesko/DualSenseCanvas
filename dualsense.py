@@ -8,6 +8,8 @@
 
 import hid
 import numpy as np
+import usb.core
+import usb.util
 
 class DualSense:
 
