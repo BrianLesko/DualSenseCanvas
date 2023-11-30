@@ -63,7 +63,8 @@ repository/
 ## Topics 
 ```
 Python | Streamlit | Git | Low Code UI
-Chat interface | text embedding | OpenAI | textual data | similarity search
+Sketchpad | HIDapi | decode bytes | PS5 | Sony | Dualsense | external device | communication 
+custom classes
 Self taught coding | Mechanical engineer | Robotics engineer
 ```
 &nbsp;
