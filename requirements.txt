@@ -1,0 +1,4 @@
+hid 
+hidapi
+numpy
+matplotlib

@@ -6,10 +6,9 @@
 # Future work caching the connection in a streamlit app: https://docs.streamlit.io/library/advanced-features/caching
 # 11/27/23
 
-import hid
+import hid # !pip install hid --use-pep517
 import numpy as np
-import usb.core
-import usb.util
+
 
 class DualSense:
 
