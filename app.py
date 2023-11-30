@@ -1,8 +1,7 @@
 # By Brian Lesko , 11/28/2023
+# This python script implements a simple sketchpad using a dualsense touchpad, conneceted via USB C. 
 
-# !brew install hidapi
-
-import io # 
+import io # used for the image download
 import time # used for the sleep function
 import numpy as np # used for the image and array making
 import streamlit as st # used for the GUI
@@ -29,7 +28,7 @@ def dualSenseCanvas():
     n = 1080-10 # y is 1100 - 10 
     m = 1900-30 # x is 40 - 1900
     pixels = np.ones((n,m))
-    loops = 1000
+    loops = 800
     pixel_size = 30 
     for i in range(loops): 
         ds.receive()
@@ -52,9 +51,10 @@ def dualSenseCanvas():
                             pixels[x1 + dx][y1 + dy] = max(0, pixels[x1 + dx][y1 + dy] - 1)
         progress_bar.progress((i + 1)/loops)
         with image_placeholder: st.image(pixels, use_column_width=True)
-        time.sleep(.0001)
+        time.sleep(.00005)
         progress_bar.progress((i + 1)/loops)
     with Title: st.title("Your Artwork is finished")
+    st.balloons()
     # Download your image
     buffer = io.BytesIO()
     plt.imsave(buffer, pixels, cmap='gray', format='png')
@@ -62,19 +62,17 @@ def dualSenseCanvas():
         st.write("")
         "---"
         st.write("")
-        st.subheader("Download your art")
-        st.write("")
-        col1, col2, col3 = st.columns([1,3,1])
-        with col2: st.download_button(
-            label="download as png",
+        col1, col2, col3 = st.columns([1,1,1])
+        with col2: 
+            st.subheader("Download")
+            st.download_button(
+            label="as png",
             data=buffer.getvalue(),
             file_name='my_artwork.png',
             mime='image/png',
-        )
+            )
         st.write("")
-        st.write("")  
         "---"
-        
     ds.disconnect()
 
 dualSenseCanvas()

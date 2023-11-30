@@ -1,4 +1,4 @@
-hid 
+libusb
 hidapi
-numpy
+streamlit
 matplotlib

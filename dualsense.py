@@ -6,7 +6,7 @@
 # Future work caching the connection in a streamlit app: https://docs.streamlit.io/library/advanced-features/caching
 # 11/27/23
 
-import hid # !pip install hid --use-pep517
+import hid
 import numpy as np
 
 
