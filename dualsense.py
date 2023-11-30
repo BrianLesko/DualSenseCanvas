@@ -66,6 +66,9 @@ class DualSense:
     def connect(self):
         self.device.open(self.vendorID, self.productID)
 
+    def connect_pyusb(self):
+        pass
+
     def receive(self, size=64):
         self.data = self.device.read(size)
 
