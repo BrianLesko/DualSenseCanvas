@@ -26,7 +26,7 @@ This code uses the following libraries:
 Run the following commands:
 ```
 pip install --upgrade streamlit hidapi matplotlib streamlit
-streamlit run 
+streamlit run https://raw.githubusercontent.com/BrianLesko/DualSenseCanvas/main/app.py
 ```
 
 This will start the local Streamlit server, and you can access the chatbot by opening a web browser and navigating to `http://localhost:8501`.
