@@ -28,8 +28,8 @@ def dualSenseCanvas():
     n = 1080-10 # y is 1100 - 10 
     m = 1900-30 # x is 40 - 1900
     pixels = np.ones((n,m))
-    loops = 800
-    pixel_size = 30 
+    loops = 900
+    pixel_size = 10
     for i in range(loops): 
         ds.receive()
         ds.updateTouchpad(n=1)
